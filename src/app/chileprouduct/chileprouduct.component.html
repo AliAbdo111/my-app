@@ -1,0 +1,24 @@
+<div
+  class="bg-image"
+  style="
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHcjnVLUP0cAbKODzNfHdlgYFCrl293SGXkQ&usqp=CAU');
+    height: 25vh;
+  "
+>  <h1>Welcome in our store</h1>
+</div>
+<!-- <img class=" w-100 " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHcjnVLUP0cAbKODzNfHdlgYFCrl293SGXkQ&usqp=CAU" alt=""> -->
+<div class="row m-4 w-100">
+<div class="card m-2" *ngFor="let item of arrproduct" style="width: 18rem;">
+   <div class="cot w-50 p-3"><img class="card-img-top h-100 d-inline-block" src="{{item.imgUrl}}" alt="Card image cap"></div> 
+    <div class="card-body p-3">
+      <h2 class="card-text">{{item.price|usdtoEg|currency:'EGP'}}</h2>
+      <h5 class="card-title">{{item.name}}</h5>
+      <p>{{item.dis}}</p>
+    </div>
+      <p class="card-text"> the last item of :{{item.Qountety}}</p>
+      <button class="btn btn-primary" (click)="addtocart(item)">Add to cart</button>
+   
+  </div>
+</div>
+
+ 

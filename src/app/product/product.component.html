@@ -1,0 +1,68 @@
+ <h1 style="background-color:khaki ;">DAshBoard</h1>
+   <h3> Categories</h3>
+   <div class="main">
+    <div class="on">
+    <ul class="one" >
+        <li>lapTop <span>(58)</span></li>
+        <li>Mobile <span>(65)</span></li>
+        <li>ztablet <span>(58)</span></li>
+    </ul> 
+  
+
+</div>
+   <div class="container">
+
+ <h2>order totalprice  Usd:</h2>
+ <h4>{{orderTotalPrice | currency}}</h4>
+ <h2>order totalprice  EGP:</h2>
+ <h4>{{orderTotalPrice  |usdtoEg |currency :'Egp':'code'}}</h4>
+ <!-- <label for="test"> select category</label>
+    <select name=""  id="test" [(ngModel)]="slctcategory">
+        <option [value]="Elm.id" *ngFor="let Elm of filtercategory">{{Elm.name}}</option>
+    </select>
+    <div class="bot">
+     <p>slected is :</p>
+    <p>{{slctcategory}}</p>
+  </div> -->
+
+
+  <br>
+  <!-- -Notes 
+-ng-if (structural Directive in General) 
+- we can't  use two strctural Directive in the same Elment Html ,
+ but we can use <ng-container > that well not reflect on the actual Dom
+ -->
+ <br>
+  <hr>
+<table class="table thead-dark">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">price in Usd</th>
+        <th scope="col">price Egp</th>
+        <th scope="col">qountety</th>
+        <th scope="col">img</th>
+        <th scope="col">category</th>
+        <th scope="col">Buy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of CartList" [class.d-none]="slctcategory!=item.categoryID" [class.bg-denger]="item.Qountety==0" [class.bg-primary]="item.Qountety>5">
+        <!--  save navication oprator -->
+      <td > {{item?.id}}</td>
+        <td>{{item?.name}}</td>
+        <td>{{item.price |currency}}</td>
+        <td>{{item.price |usdtoEg |currency :'Egp':'code'}}</td>
+        <td>{{item.Qountety}}</td>
+        <td scope="row" > <img  width="50" height="60" src="{{item.imgUrl}}" alt=""></td>
+        <td>{{item.categoryID}}</td>
+        <td><input  width="20" height="20"  #itemcoun type="number"   class="form-control" id=""></td>
+        <!-- tmplet varibel in veiw   =>#Elemnt name -->
+      <td><button class="btn btn-secondary" (click)="Buy(item.price,itemcoun.value,item.id)">Buy</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div> 
+
+</div> 

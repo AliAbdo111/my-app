@@ -1,0 +1,82 @@
+<!-- Pills content -->
+<section class="h-100 gradient-form" style="background-color: #eee3;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+
+                <div class="text-center">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                    style="width: 185px;" alt="logo">
+                  <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
+                </div>
+
+                <form [formGroup]="register" (ngSubmit)="DisplayData();">
+                  <p>Please login to your cREA anew account</p>
+                  <div class="form-outline mb-4">
+
+                    <label class="form-label" for="form2Example11">Username</label>
+                    <input type="text" name="Useranmelog" id="form2Example11" class="form-control"
+                      placeholder="Phone number or email address" formControlName="Useranmelog" />
+                    <div class="alert alert-danger" *ngIf="!register.get('Useranmelog')?.valid && register.get('Useranmelog')?.touched">
+                      <span *ngIf="register.get('Useranmelog')?.errors?.['required']">Enter user name </span>
+                    </div>
+                    <!-- <span *ngIf="register.get('Useranmelog')?.touched && register.get('Useranmelog')?.errors?.['required']">Enter user name </span> -->
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example11">Email</label>
+                    <input type="email" name="emaillog" id="form2Example11" class="form-control"
+                      placeholder="Phone number or email address" formControlName="emaillog" />
+                    <!-- <span *ngIf="register.get('emaillog').hasError('required')">Enter user name </span> -->
+
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example22">Password</label>
+                    <input type="password" name="passwordlog" id="form2Example22" class="form-control"
+                      formControlName="passwordlog" />
+                    <!-- <span *ngIf="register.get('passwordlog').hasError('required')">Enter user name </span> -->
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example11">Address</label>
+                    <input type="email" name="Addresslog" id="form2Example11" class="form-control"
+                      placeholder="Phone number or email address" formControlName="Addresslog" />
+                    <!-- <span *ngIf="register.get('Addresslog').hasError('required')">Enter address !</span> -->
+
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example22">phone</label>
+                    <input type="text" name="Phonelog" id="form2Example22" class="form-control"
+                      formControlName="Phonelog" />
+                    <!-- <span *ngIf="register.get('Phonelog').hasError('required')">Enter address !</span> -->
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example11">nationalId</label>
+                    <input type="email" name="nationalId" id="form2Example11" class="form-control"
+                      placeholder="Phone number or email address" formControlName="nationalId" />
+                    <!-- <span *ngIf="register.get('nationalId').hasError('required')">Enter address !</span> -->
+
+                  </div>
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" name="sublog"
+                      [disabled]="!register.valid" type="submit">sign
+                      in</button>
+
+                  </div>
+
+
+
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
